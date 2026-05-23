@@ -1,5 +1,6 @@
 PREMIUM_TYPE = "premium"
-
+MIN_DURATION = 1
+MAX_DURATION = 12
 
 def calculate_membership_fee(
     age,
@@ -8,7 +9,7 @@ def calculate_membership_fee(
     membership_duration
 ):
 
-    if membership_duration < 1 or membership_duration > 12:
+    if membership_duration < MIN_DURATION or membership_duration > MAX_DURATION:
         raise ValueError("Invalid membership duration")
     
     if access_day not in ["weekday", "weekend"]:
