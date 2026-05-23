@@ -1,3 +1,6 @@
+PREMIUM_TYPE = "premium"
+
+
 def calculate_membership_fee(
     age,
     membership_type,
@@ -5,7 +8,7 @@ def calculate_membership_fee(
     membership_duration
 ):
 
-    if membership_type == "premium":
+    if membership_type == PREMIUM_TYPE:
         return "Unlimited Access"
 
     return 50
