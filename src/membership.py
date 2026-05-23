@@ -1,3 +1,4 @@
+WEEKEND_EXTRA = 5
 PREMIUM_TYPE = "premium"
 
 
@@ -8,7 +9,12 @@ def calculate_membership_fee(
     membership_duration
 ):
 
+    fee = 50
+
     if membership_type == PREMIUM_TYPE:
         return "Unlimited Access"
 
-    return 50
+    if access_day == "weekend":
+        fee += WEEKEND_EXTRA
+
+    return fee
