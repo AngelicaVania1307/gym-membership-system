@@ -1,3 +1,4 @@
+import pytest
 from src.membership import calculate_membership_fee
 
 

@@ -8,6 +8,9 @@ def calculate_membership_fee(
     membership_duration
 ):
 
+    if membership_duration < 1 or membership_duration > 12:
+        raise ValueError("Invalid membership duration")
+
     if membership_type == PREMIUM_TYPE:
         return "Unlimited Access"
 
