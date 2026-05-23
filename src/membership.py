@@ -1,3 +1,4 @@
+WEEKEND_EXTRA = 5
 PREMIUM_TYPE = "premium"
 MIN_DURATION = 1
 MAX_DURATION = 12
@@ -15,8 +16,12 @@ def calculate_membership_fee(
     
     if access_day not in VALID_ACCESS_DAYS:
         raise ValueError("Invalid access day")
+    fee = 50
 
     if membership_type == PREMIUM_TYPE:
         return "Unlimited Access"
 
-    return 50
+    if access_day == "weekend":
+        fee += WEEKEND_EXTRA
+
+    return fee
