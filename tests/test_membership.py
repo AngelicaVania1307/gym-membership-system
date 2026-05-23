@@ -18,3 +18,12 @@ def test_invalid_membership_duration():
             access_day="weekday",
             membership_duration=15
         )
+
+def test_invalid_access_day():
+    with pytest.raises(ValueError):
+        calculate_membership_fee(
+            age=25,
+            membership_type="regular",
+            access_day="holiday",
+            membership_duration=6
+        )
