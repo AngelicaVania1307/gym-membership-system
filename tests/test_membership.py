@@ -36,3 +36,9 @@ def test_invalid_access_day():
             access_day="holiday",
             membership_duration=6
         )
+
+def test_student_discount():
+    assert calculate_membership_fee(age=20, membership_type="student", access_day="weekday", membership_duration=1) == 80
+
+def test_senior_discount():
+    assert calculate_membership_fee(age=65, membership_type="regular", access_day="weekday", membership_duration=1) == 70
