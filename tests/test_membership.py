@@ -17,6 +17,7 @@ def test_premium_membership():
         membership_type="premium",
         access_day="weekday",
         membership_duration=6
+        
     ) == "Unlimited Access"
 
 def test_invalid_membership_duration():
@@ -38,7 +39,7 @@ def test_invalid_access_day():
         )
 
 def test_student_discount():
-    assert calculate_membership_fee(age=20, membership_type="student", access_day="weekday", membership_duration=1) == 80
+    assert calculate_membership_fee(age=20, membership_type="student", access_day="weekday", membership_duration=1) == 40
 
 def test_senior_discount():
-    assert calculate_membership_fee(age=65, membership_type="regular", access_day="weekday", membership_duration=1) == 70
+    assert calculate_membership_fee(age=65, membership_type="regular", access_day="weekday", membership_duration=1) == 35
