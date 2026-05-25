@@ -24,13 +24,4 @@ def calculate_membership_fee(
     if access_day == "weekend":
         fee += WEEKEND_EXTRA
 
-
-    discount = 0.0
-    if membership_type.lower() == "student":
-        discount = 0.20  
-    elif age > 60:
-        discount = 0.30  
-        
-    fee = fee * (1 - discount)
-
     return fee
